@@ -1,39 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: soilee <soilee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/14 21:56:28 by soilee            #+#    #+#             */
-/*   Updated: 2020/07/16 17:31:15 by soilee           ###   ########.fr       */
+/*   Created: 2020/07/16 21:30:24 by soilee            #+#    #+#             */
+/*   Updated: 2020/07/16 22:01:45 by soilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
 	unsigned int i;
+	unsigned int dest_len;
 
 	i = 0;
-	while (i < n && (s1[i] != '\0' || s2[i] != '\0'))
+	dest_len = 0;
+	while (dest[dest_len] != '\0')
+		dest_len++;
+	dest_len += 1;
+	while (i <= nb)
 	{
-		if (s1[i] == s2[i])
-		{
-			i++;
-			continue;
-		}
-		else if (s1[i] > s2[i])
-			return (1);
-		else if (s1[i] < s2[i])
-			return (-1);
+		dest[dest_len] = src[i];
+		dest_len++;
 		i++;
 	}
-	if (n == i)
-		return (0);
-	else if (s1[i] == '\0' && s2[i] == '\0')
-		return (0);
-	else if (s1[i] > s2[i])
-		return (1);
-	else
-		return (-1);
+	dest[dest_len] = '\0';
+	return (dest);
 }
