@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: soilee <soilee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/16 22:12:40 by soilee            #+#    #+#             */
-/*   Updated: 2020/07/19 20:46:21 by soilee           ###   ########.fr       */
+/*   Created: 2020/07/19 20:21:15 by soilee            #+#    #+#             */
+/*   Updated: 2020/07/19 20:40:32 by soilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find)
-{
-	char	*tmp;
-	int		find_count;
+#include <stdio.h>
+#include <string.h>
 
-	tmp = to_find;
-	find_count = -1;
-	while (*str)
-	{
-		if (*str != *to_find)
-		{
-			find_count = -1;
-			to_find = tmp;
-		}
-		if (*str == *to_find)
-		{
-			to_find++;
-			find_count++;
-			if (*to_find == '\0')
-				return (str - find_count);
-		}
-		str++;
-	}
+char	*ft_strstr(char *str, char *to_find);
+
+int		main(void)
+{
+	char str[30] = "apapple";
+	char to_find[10] = "app";
+
+	printf("%s\n%s\n", ft_strstr(str, to_find), strstr(str, to_find));
+
 	return (0);
 }
