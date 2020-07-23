@@ -6,7 +6,7 @@
 /*   By: soilee <soilee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/16 17:21:26 by soilee            #+#    #+#             */
-/*   Updated: 2020/07/16 21:12:51 by soilee           ###   ########.fr       */
+/*   Updated: 2020/07/23 20:35:23 by soilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ char	*ft_strcat(char *dest, char *src)
 	dest_len = 0;
 	while (dest[dest_len] != '\0')
 		dest_len++;
-	dest_len += 1;
 	while (dest[i] != '\0' || src[i] != '\0')
 	{
 		dest[dest_len] = src[i];
@@ -27,4 +26,5 @@ char	*ft_strcat(char *dest, char *src)
 		i++;
 	}
 	dest[dest_len] = '\0';
+	return (dest);
 }

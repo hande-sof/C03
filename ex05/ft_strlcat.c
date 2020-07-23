@@ -6,7 +6,7 @@
 /*   By: soilee <soilee@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/19 20:46:54 by soilee            #+#    #+#             */
-/*   Updated: 2020/07/21 19:24:02 by soilee           ###   ########.fr       */
+/*   Updated: 2020/07/23 20:46:11 by soilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	else if (str_len(dest) <= size)
 		str_i = str_len(dest) + str_len(src);
 	dest_i = str_len(dest);
-	while (dest_i < size)
+	while (dest_i < size && *src)
 	{
 		if (*(dest + dest_i) == '\0' && dest_i < size - 1)
 		{
